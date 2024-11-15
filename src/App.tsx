@@ -31,6 +31,14 @@ function App() {
           <motion.div
             key={item1.id}
             layoutId={`item-${item1.id}`}
+            initial={{
+              x: "-100%",
+              opacity: 0,
+            }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
             exit={{
               x: "-100%",
               opacity: 0,
@@ -39,7 +47,7 @@ function App() {
             className="absolute top-0 left-0 h-60 w-full rounded-xl flex items-center justify-center text-5xl overflow-hidden border-4 border-white"
           >
             <div className="w-full h-full relative">
-              <video src={MAW} autoPlay muted />
+              <video src={MAW} autoPlay muted loop />
               <p
                 style={{
                   backgroundColor: item1.backgroundColor,
@@ -63,10 +71,14 @@ function App() {
               x: 0,
               opacity: 1,
             }}
+            exit={{
+              x: "100%",
+              opacity: 0,
+            }}
             className="absolute bottom-0 left-0 h-60 w-full rounded-xl flex items-center justify-center text-5xl overflow-hidden border-4 border-white"
           >
             <div className="w-full h-full relative">
-              <video src={MAW} autoPlay muted />
+              <video src={MAW} autoPlay muted loop />
               <p
                 style={{
                   backgroundColor: item2.backgroundColor,
